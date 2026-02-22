@@ -63,7 +63,6 @@ Authorization: Bearer <TOKEN>
 ## 📂 Project Structure
 
 ```
-
 SmartExpense/
 │
 ├── backend/
@@ -79,7 +78,6 @@ SmartExpense/
 │   └── style.css
 │
 └── README.md
-
 ```
 
 ---
