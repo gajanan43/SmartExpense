@@ -5,6 +5,22 @@ A full-stack expense tracking web application built with **Spring Boot** REST AP
 🔗 **Live Demo:* [https://smartexpense-frontend.onrender.com](https://smartexpense1.onrender.com/)
 
 ---
+# 📸 Screenshots:
+
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Screenshot]  <img width="1912" height="973" alt="Screenshot 2026-02-22 153928" src="https://github.com/user-attachments/assets/b848c712-bf57-4290-b711-cd8e62faea24" />
+
+
+### 📊 Dashboard
+![Dashboard Screenshot](screenshots/dashboard.png)
+
+### ➕ Add Expense
+![Add Expense Screenshot](screenshots/add.png)
+
+### 📜 History Page
+![History Screenshot](screenshots/history.png)
 
 ## ✨ Features
 
