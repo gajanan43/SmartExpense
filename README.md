@@ -14,13 +14,13 @@ A full-stack expense tracking web application built with **Spring Boot** REST AP
 
 
 ### 📊 Dashboard
-![Dashboard Screenshot](screenshots/dashboard.png)
+![Dashboard Screenshot] <img width="1919" height="919" alt="Screenshot 2026-02-22 154639" src="https://github.com/user-attachments/assets/c5378238-71fb-48eb-956c-0a67b5613417" />
 
-### ➕ Add Expense
-![Add Expense Screenshot](screenshots/add.png)
+
 
 ### 📜 History Page
-![History Screenshot](screenshots/history.png)
+![History Screenshot] <img width="1919" height="915" alt="Screenshot 2026-02-22 154652" src="https://github.com/user-attachments/assets/6d6e73ae-2e95-4b1f-804c-4ae8244867b5" />
+
 
 ## ✨ Features
 
