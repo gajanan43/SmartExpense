@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartExpense — Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- AUTH PAGES -->
+  <div id="authContainer" class="auth-container">
+
+    <!-- LOGIN -->
+    <div id="loginPage" class="auth-page active">
+      <div class="auth-box">
+        <div class="auth-logo">💸 SmartExpense</div>
+        <h2 class="auth-title">Welcome Back</h2>
+        <p class="auth-sub">Sign in to your account</p>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="loginUsername" placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter password" />
+        </div>
+        <button class="btn-primary" onclick="login()">Sign In</button>
+        <div id="loginMsg" class="form-msg"></div>
+        <p class="auth-switch">Don't have an account? <span onclick="showRegister()">Register</span></p>
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="registerPage" class="auth-page">
+      <div class="auth-box">
+        <div class="auth-logo">💸 SmartExpense</div>
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-sub">Start tracking your expenses</p>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="regUsername" placeholder="Choose a username" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="regPassword" placeholder="Choose a password" />
+        </div>
+        <button class="btn-primary" onclick="register()">Create Account</button>
+        <div id="registerMsg" class="form-msg"></div>
+        <p class="auth-switch">Already have an account? <span onclick="showLogin()">Sign In</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="appContainer" class="app-container hidden">
+
+    <header class="header">
+      <div class="logo">💸 SmartExpense</div>
+      <nav class="nav">
+        <button class="nav-btn active" onclick="showSection('dashboard')">Dashboard</button>
+        <button class="nav-btn" onclick="showSection('add')">+ Add</button>
+        <button class="nav-btn" onclick="showSection('history')">History</button>
+        <button class="nav-btn logout-btn" onclick="logout()">Logout</button>
+      </nav>
+    </header>
+
+    <section id="dashboard" class="section active">
+      <div class="hero-text">
+        <h1>Your Money,<br/><span class="accent">Simplified.</span></h1>
+        <p class="sub">Track spending in real-time. Know exactly where every rupee goes.</p>
+      </div>
+      <div class="cards-row">
+        <div class="card card--total"><span class="card-label">Total Spent</span><span class="card-value" id="totalSpent">₹0</span></div>
+        <div class="card card--month"><span class="card-label">This Month</span><span class="card-value" id="monthSpent">₹0</span></div>
+        <div class="card card--top"><span class="card-label">Top Category</span><span class="card-value" id="topCategory">—</span></div>
+      </div>
+      <div class="chart-section">
+        <h2 class="section-title">Category Breakdown</h2>
+        <div class="chart-bars" id="chartBars"><p class="empty-msg">No data yet. Add expenses!</p></div>
+      </div>
+      <div class="recent-section">
+        <h2 class="section-title">Recent Transactions</h2>
+        <ul class="txn-list" id="recentList"><li class="empty-msg">No transactions yet.</li></ul>
+      </div>
+    </section>
+
+    <section id="add" class="section">
+      <div class="form-wrap">
+        <h2 class="form-title">New Expense</h2>
+        <div class="form-group"><label>Title</label><input type="text" id="expTitle" placeholder="e.g. Zomato Order" /></div>
+        <div class="form-group"><label>Amount (₹)</label><input type="number" id="expAmount" placeholder="0.00" min="0" /></div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="expCategory">
+            <option value="Food">🍔 Food</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Shopping">🛍️ Shopping</option>
+            <option value="Bills">📄 Bills</option>
+            <option value="Health">💊 Health</option>
+            <option value="Entertainment">🎮 Entertainment</option>
+            <option value="Other">📦 Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Date</label><input type="date" id="expDate" /></div>
+        <div class="form-group"><label>Notes (optional)</label><textarea id="expNotes" rows="3" placeholder="Any extra details..."></textarea></div>
+        <button class="btn-primary" onclick="addExpense()">Save Expense</button>
+        <div id="formMsg" class="form-msg"></div>
+      </div>
+    </section>
+
+    <section id="history" class="section">
+      <div class="history-header">
+        <h2 class="section-title">All Transactions</h2>
+        <div class="filter-row">
+          <select id="filterCategory" onchange="loadHistory()">
+            <option value="">All Categories</option>
+            <option value="Food">Food</option><option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option><option value="Bills">Bills</option>
+            <option value="Health">Health</option><option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="month" id="filterMonth" onchange="loadHistory()" />
+        </div>
+      </div>
+      <ul class="txn-list full" id="historyList"><li class="empty-msg">No transactions yet.</li></ul>
+      <div class="total-bar">Total: <span id="historyTotal">₹0</span></div>
+    </section>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
