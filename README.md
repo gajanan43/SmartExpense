@@ -1,4 +1,3 @@
-```markdown
 # 💸 SmartExpense – Full Stack Expense Tracker
 
 SmartExpense is a secure full-stack expense management web application built using **Spring Boot, MySQL, JWT Authentication, HTML, CSS, and JavaScript**.
