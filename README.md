@@ -2,8 +2,6 @@
 
 A full-stack expense tracking web application built with **Spring Boot** REST API backend and **Vanilla JS** frontend. Supports secure user authentication, per-user data isolation, and is fully deployed on the cloud.
 
-🔗 **Live Demo:* [https://smartexpense-frontend.onrender.com](https://smartexpense1.onrender.com/)
-
 ---
 # 📸 Screenshots:
 
